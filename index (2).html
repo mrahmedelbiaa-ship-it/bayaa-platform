@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منصة أ/أحمد البياع التعليمية</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f4f8f6;--cd:#fff;--tx:#17302a;--mu:#5f7a72;--pr:#0f9d76;--p2:#e2f6ef;--ac:#f59f00;--ok:#2b9348;--okb:#e3f6e8;--er:#d00000;--erb:#fde8e8;--bd:#dbe8e3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0d1714;--cd:#15231f;--tx:#e6f2ee;--mu:#93aaa2;--pr:#3ddba9;--p2:#1b3029;--ok:#5fd37c;--okb:#173324;--er:#ff7b7b;--erb:#3a1d1d;--bd:#26403a}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;line-height:1.8}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--cd);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--cd);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:6px;padding:8px 14px;flex-wrap:wrap}
+.logo{font-weight:800;color:var(--pr);font-size:18px;margin-inline-end:auto;text-decoration:none}
+nav a{color:var(--tx);text-decoration:none;padding:6px 14px;border-radius:18px;font-size:15px}nav a.on{background:var(--p2);color:var(--pr);font-weight:700}
+main{max-width:1000px;margin:0 auto;padding:18px 14px 50px}
+.hero{background:linear-gradient(135deg,#0f9d76,#1971c2);color:#fff;border-radius:20px;padding:30px 22px;text-align:center}
+.hero h1{margin:0 0 8px;font-size:26px}.hero p{margin:0 auto 14px;max-width:560px;opacity:.95}
+h2{font-size:21px;margin:26px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:16px}
+.card.c{cursor:pointer}.card .e{font-size:30px}.card h3{margin:4px 0;font-size:16px}.card p{margin:0 0 8px;color:var(--mu);font-size:14px}
+.tag{display:inline-block;background:var(--p2);color:var(--pr);border-radius:12px;padding:1px 10px;font-size:12px}
+.price{font-weight:800;color:var(--ac);font-size:18px}
+button,.btn{font:inherit;cursor:pointer;background:var(--pr);color:#fff;border:0;border-radius:10px;padding:9px 20px;text-decoration:none;display:inline-block}
+.btn.s,button.s{background:var(--p2);color:var(--pr)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.chips button{background:var(--cd);color:var(--tx);border:1px solid var(--bd);border-radius:18px;padding:5px 14px}.chips button.on{background:var(--pr);color:#fff}
+label{display:block;font-size:14px;margin:8px 0 2px;color:var(--mu)}
+input,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:520px){.row{grid-template-columns:1fr}}
+.msg{padding:10px 14px;border-radius:10px;margin:10px 0;background:var(--p2)}.msg.er{background:var(--erb);color:var(--er)}.msg.ok{background:var(--okb);color:var(--ok)}
+.ls{display:flex;gap:12px;align-items:center;background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:11px 14px;margin-top:8px;cursor:pointer}
+.n{width:30px;height:30px;border-radius:50%;background:var(--p2);color:var(--pr);display:grid;place-items:center;font-weight:700;flex:none}.ls.d .n{background:var(--ok);color:#fff}
+.vid{position:relative;background:#0b1512;border-radius:14px;overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center;color:#9fb8af;user-select:none}
+.vid video{width:100%;height:100%}.wm{position:absolute;color:rgba(255,255,255,.35);font-size:14px;pointer-events:none;animation:mv 18s linear infinite}
+@keyframes mv{0%{top:8%;right:6%}25%{top:70%;right:60%}50%{top:20%;right:70%}75%{top:75%;right:10%}100%{top:8%;right:6%}}
+.o{display:block;width:100%;text-align:start;background:var(--bg);color:var(--tx);border:1px solid var(--bd);margin-top:8px}.o.ok{background:var(--okb);border-color:var(--ok)}.o.no{background:var(--erb);border-color:var(--er)}
+.bar{height:8px;background:var(--p2);border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--pr)}
+.soc{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0}.soc a{background:var(--p2);color:var(--pr);padding:4px 14px;border-radius:16px;text-decoration:none;font-size:14px}
+footer{background:var(--cd);border-top:1px solid var(--bd);padding:26px 14px;text-align:center;color:var(--mu);font-size:14px}
+footer a{color:var(--mu);margin:0 8px;text-decoration:none}footer h3{color:var(--tx);margin:0 0 4px}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#home">📚 أ/أحمد البياع</a>
+<nav id="nav"><a href="#home" data-p="home">الرئيسية</a><a href="#courses" data-p="courses">الكورسات</a><a href="#account" data-p="account">حسابي</a></nav></header>
+<main id="app"></main>
+<footer>
+<h3>أ/أحمد البياع</h3>
+<p>منصة تعليمية إلكترونية لطلاب المرحلة الإعدادية والثانوية في مصر، متخصصة في اللغة العربية.</p>
+<div class="soc"><a href="https://www.facebook.com/ahmedmohamedelbiaa" target="_blank" rel="noopener">فيسبوك</a><a href="https://www.instagram.com/ahmedmelbiaa/" target="_blank" rel="noopener">انستجرام</a><a href="https://www.youtube.com/@mrahmedelbiaa" target="_blank" rel="noopener">يوتيوب</a><a href="https://www.tiktok.com/@mr.ahmedelbiaa" target="_blank" rel="noopener">تيك توك</a><a href="https://wa.me/201025238488" target="_blank" rel="noopener">واتساب الدعم</a></div>
+<div><a href="https://hadeerghanem.com/about/">عن المنصة</a><a href="https://hadeerghanem.com/privacy/">سياسة الخصوصية</a><a href="https://hadeerghanem.com/terms/">شروط الاستخدام</a><a href="https://hadeerghanem.com/refund-policy/">سياسة الاسترجاع</a></div>
+<p>© 2026 جميع الحقوق محفوظة</p></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+// ===== ضع هنا إعدادات مشروع Firebase الخاص بك =====
+const FB={apiKey:"AIzaSyDx7JlC7qbSIBfQG7D7gTHboLySDyLMhLU",authDomain:"bayaa-platform.firebaseapp.com",projectId:"bayaa-platform",appId:"1:888921596940:web:93737ccda8ce327b13fa29"};
+const G=[['p1','الصف الأول الإعدادي','إعدادي'],['p2','الصف الثاني الإعدادي','إعدادي'],['p3','الصف الثالث الإعدادي','إعدادي'],['s1','الصف الأول الثانوي','ثانوي'],['s2','الصف الثاني الثانوي','ثانوي'],['s3','الصف الثالث الثانوي','ثانوي']];
+const FT=[['🌍','التعلم من أي مكان','شاهد دروسك في أي وقت ومن أي جهاز.'],['📝','اختبارات إلكترونية','اختبر مستواك بعد كل درس بشكل فوري.'],['👨‍👩‍👦','متابعة ولي الأمر','يتابع ولي الأمر أداء ابنه أولًا بأول.'],['💡','شرح بسيط ومفهوم','نبسّط المفاهيم الصعبة بأسلوب واضح وسهل الفهم.'],['🎨','فيديوهات برسومات توضيحية','فيديوهات مشروحة برسومات توضيحية تسهّل الاستيعاب.'],['🎯','تمارين تفاعلية على الدروس','تمارين تفاعلية بعد كل درس لتثبيت المعلومة.'],['🔄','تحديث مستمر حسب المنهج','تحديث مستمر للمحتوى بما يواكب المنهج الدراسي.'],['👥','مجتمع طلابي ضخم','انضم لمجتمع كبير من الطلاب على نفس المسار.']];
+const PAY='01025238488';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=s=>document.querySelector(s),app=$('#app');
+function cc(c){return`<div class="card c" onclick="location.hash='course/${c.id}'"><div class="e">${c.e}</div><h3>${c.t}</h3><p><span class="tag">${gn(c.g)}</span> · ${c.L.length} دروس</p><span class="price">${c.pr} ج.م</span></div>`}
+function home(){
+ app.innerHTML=`<div class="hero"><h1>مرحباً بك في منصة أ/أحمد البياع</h1><p>اللغة العربية لطلاب الإعدادي والثانوي في مصر.</p><a class="btn" style="background:#fff;color:#0f9d76" href="#courses">تصفح الكورسات</a></div>
+ <h2>اختر مرحلتك الدراسية</h2>${['إعدادي','ثانوي'].map(s=>`<h3>المرحلة ال${s}ة</h3><div class="grid">${G.filter(g=>g[2]===s).map(g=>`<div class="card c" onclick="flt='${g[0]}';location.hash='courses'"><div class="e">${s==='إعدادي'?'📘':'📗'}</div><h3>${g[1]}</h3></div>`).join('')}</div>`).join('')}
+ <h2>مميزات المنصة</h2><p style="color:var(--mu);margin-top:-6px">كل ما تحتاجه لرحلة تعليمية متكاملة</p><div class="grid">${FT.map(f=>`<div class="card"><div class="e">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></div>`).join('')}</div>`;
+}
+firebase.initializeApp(FB);const au=firebase.auth(),db=firebase.firestore();
+const mail=p=>p+'@bayaa.app',gn=id=>(G.find(g=>g[0]===id)||[0,'-'])[1];
+let U=null,P=null,ADM=false,CO=[],EN={},flt='all',err='',AT='c',AC='',A={},MM={};
+const bad=m=>m?`<div class="msg er">${m}</div>`:'';
+const act=id=>ADM||(EN[id]&&EN[id].st==='active');
+function embed(u){u=u||'';let m=u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);if(m)return'https://www.youtube.com/embed/'+m[1]+'?rel=0&modestbranding=1';
+ if(/drive\.google\.com/.test(u)){m=u.match(/\/d\/([\w-]+)/)||u.match(/[?&]id=([\w-]+)/);if(m)return'https://drive.google.com/file/d/'+m[1]+'/preview'}return''}
+async function loadCO(){const s=await db.collection('courses').orderBy('o').get();CO=await Promise.all(s.docs.map(async d=>{const l=await db.collection('courses/'+d.id+'/lessons').orderBy('o').get();return{id:d.id,...d.data(),L:l.docs.map(x=>({id:x.id,...x.data()}))}}))}
+async function loadEN(){EN={};if(!U)return;const s=await db.collection('enrollments').where('uid','==',U.uid).get();s.forEach(d=>EN[d.data().cid]=d.data())}
+au.onAuthStateChanged(async u=>{U=u;ADM=false;if(!u)P=null;else{try{const d=await db.doc('users/'+u.uid).get();if(d.exists)P=d.data();ADM=(await db.doc('admins/'+u.uid).get()).exists}catch(e){}}
+ try{await loadEN()}catch(e){}try{await loadCO()}catch(e){CO=[]}render()});
+function render(){const[p,a,b]=location.hash.slice(1).split('/');const pg=p||'home';
+ document.querySelectorAll('#adm').forEach(x=>x.remove());
+ if(ADM)$('#nav').insertAdjacentHTML('beforeend','<a id="adm" href="#admin" data-p="admin">لوحة التحكم</a>');
+ document.querySelectorAll('nav a').forEach(x=>x.classList.toggle('on',x.dataset.p===(pg==='course'||pg==='lesson'?'courses':pg)));
+ ({home,courses,course:()=>course(a),lesson:()=>lesson(a,b),account,admin})[pg]?.();scrollTo(0,0)}
+function courses(){app.innerHTML=`<h2>الكورسات</h2><div class="chips"><button class="${flt==='all'?'on':''}" onclick="flt='all';courses()">الكل</button>${G.map(g=>`<button class="${flt===g[0]?'on':''}" onclick="flt='${g[0]}';courses()">${g[1]}</button>`).join('')}</div><div class="grid">${CO.filter(c=>flt==='all'||c.g===flt).map(cc).join('')||'<p>لا توجد كورسات بعد.</p>'}</div>`}
+function course(id){const c=CO.find(x=>x.id===id);if(!c)return courses();let box='';
+ if(!act(id))box=!U?reg(c):!EN[id]?payBox(c):waitBox(c,EN[id]);
+ app.innerHTML=`<a href="#courses" style="color:var(--pr)">→ كل الكورسات</a><h2>${esc(c.e)} ${esc(c.t)}</h2><span class="tag">${gn(c.g)}</span> <span class="price">${c.pr} ج.م</span>${box}<div>${c.L.map((l,i)=>`<div class="ls" onclick="${act(id)?`location.hash='lesson/${id}/${l.id}'`:`alert('اشترك في الكورس أولاً لفتح الدروس')`}"><span class="n">${act(id)?i+1:'🔒'}</span>${esc(l.t)}</div>`).join('')}</div>`}
+function reg(c){return`<div class="card" style="margin:14px 0"><h3>إنشاء حساب والاشتراك في الكورس</h3><p>التسجيل يتم عند شراء الكورس. لديك حساب؟ <a href="#account" style="color:var(--pr)">سجّل الدخول</a></p><div class="row"><div><label>الاسم الأول</label><input id="fn"></div><div><label>الاسم الثاني</label><input id="ln"></div><div><label>رقم الهاتف</label><input id="ph" inputmode="numeric" maxlength="11"></div><div><label>رقم هاتف ولي الأمر</label><input id="pp" inputmode="numeric" maxlength="11"></div></div><label>كلمة المرور</label><input id="pw" type="password"><label>المرحلة الدراسية</label><select id="gr">${G.map(g=>`<option value="${g[0]}" ${g[0]===c.g?'selected':''}>${g[1]}</option>`).join('')}</select>${bad(err)}<p><button onclick="doReg('${c.id}')">متابعة للدفع</button></p></div>`}
+async function doReg(cid){const v=i=>$('#'+i).value.trim(),ph=/^01\d{9}$/;err='';
+ if(!v('fn')||!v('ln'))err='أدخل الاسم الأول والثاني.';else if(!ph.test(v('ph'))||!ph.test(v('pp')))err='أدخل رقمي هاتف صحيحين (11 رقماً يبدأ بـ 01).';else if(v('pw').length<6)err='كلمة المرور 6 أحرف على الأقل.';
+ if(!err)try{const r=await au.createUserWithEmailAndPassword(mail(v('ph')),v('pw'));P={fn:v('fn'),ln:v('ln'),ph:v('ph'),pp:v('pp'),g:v('gr')};await db.doc('users/'+r.user.uid).set(P)}catch(e){err=e.code==='auth/email-already-in-use'?'هذا الرقم مسجل بالفعل، سجّل الدخول من صفحة حسابي.':'تعذر التسجيل، حاول مرة أخرى.'}
+ course(cid)}
+function payBox(c){return`<div class="card" style="margin:14px 0"><h3>الدفع عبر فودافون كاش</h3><ol><li>حوّل مبلغ <b>${c.pr} ج.م</b> على الرقم <b dir="ltr">${PAY}</b> عبر فودافون كاش.</li><li>أدخل رقم الهاتف الذي حوّلت منه وآخر 4 أرقام من رقم العملية.</li><li>سيظهر لك رقم تأكيدي، وسيتم تفعيل الكورس بعد مراجعة التحويل.</li></ol><label>رقم الهاتف المحوَّل منه</label><input id="sp" inputmode="numeric" maxlength="11"><label>آخر 4 أرقام من رقم العملية</label><input id="tx" inputmode="numeric" maxlength="4">${bad(err)}<p><button onclick="doPay('${c.id}')">تأكيد الدفع</button></p></div>`}
+async function doPay(cid){const sp=$('#sp').value.trim(),tx=$('#tx').value.trim();err='';
+ if(!/^01\d{9}$/.test(sp)||!/^\d{4}$/.test(tx)){err='تأكد من رقم الهاتف وآخر 4 أرقام.';return course(cid)}
+ const e={uid:U.uid,cid,st:'pending',ref:'AB-'+Math.floor(100000+Math.random()*900000),sp,tx,name:P?P.fn+' '+P.ln:'',ph:P?P.ph:'',t:Date.now()};
+ try{await db.doc('enrollments/'+U.uid+'_'+cid).set(e);EN[cid]=e}catch(x){err='تعذر إرسال الطلب، حاول مرة أخرى.'}course(cid)}
+function waitBox(c,en){const m=encodeURIComponent(`مرحباً، قمت بدفع ${c.pr} ج.م لكورس (${c.t}). الرقم التأكيدي: ${en.ref}`);
+ return`<div class="card" style="margin:14px 0"><div class="msg ok">تم استلام طلبك ✅ رقمك التأكيدي: <b dir="ltr">${en.ref}</b></div><p>سيتم تفعيل الكورس بعد مراجعة التحويل. يمكنك إرسال الرقم التأكيدي لخدمة العملاء لتسريع التفعيل.</p><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${PAY}?text=${m}">إرسال على واتساب</a></div>`}
+async function lesson(cid,lid){const c=CO.find(x=>x.id===cid),l=c&&c.L.find(x=>x.id===lid);if(!l||!act(cid)){location.hash='course/'+cid;return}
+ const i=c.L.indexOf(l);if(!MM[lid]){app.innerHTML='<p>جارٍ التحميل...</p>';try{MM[lid]=(await db.doc(`courses/${cid}/media/${lid}`).get()).data()}catch(e){}}
+ const m=MM[lid];if(!m){app.innerHTML=bad('تعذر تحميل الدرس.');return}const em=embed(m.url),s=A[lid],o=m.o||[];
+ app.innerHTML=`<a href="#course/${cid}" style="color:var(--pr)">→ ${esc(c.t)}</a><h2>${i+1}. ${esc(l.t)}</h2><div class="vid" oncontextmenu="return false">${em?`<iframe src="${em}" allow="encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="width:100%;height:100%;border:0"></iframe>`:'رابط الفيديو غير مدعوم'}<span class="wm">${P?esc(P.fn+' - '+P.ph):''}</span></div>
+ ${m.q?`<div class="card" style="margin-top:14px"><h3>اختبر نفسك</h3><p>${esc(m.q)}</p>${o.map((t,j)=>`<button class="o ${s!=null?(j===m.a?'ok':j===s?'no':''):''}" onclick="ans('${cid}','${lid}',${j})">${esc(t)}</button>`).join('')}${s!=null?`<div class="msg ${s===m.a?'ok':'er'}">${s===m.a?'إجابة صحيحة 🎉':'إجابة خاطئة، الصحيحة: '+esc(o[m.a])}</div>`:''}</div>`:''}
+ <p>${i?`<a class="btn s" href="#lesson/${cid}/${c.L[i-1].id}">السابق</a> `:''}${i<c.L.length-1?`<a class="btn" href="#lesson/${cid}/${c.L[i+1].id}">التالي</a>`:''}</p>`}
+async function ans(cid,lid,j){if(A[lid]!=null)return;A[lid]=j;if(U)try{await db.doc(`users/${U.uid}/prog/${lid}`).set({cid,ok:j===MM[lid].a?1:0})}catch(e){}lesson(cid,lid)}
+async function account(){
+ if(!U){app.innerHTML=`<h2>تسجيل الدخول</h2><div class="card"><label>رقم الهاتف</label><input id="lp" inputmode="numeric"><label>كلمة المرور</label><input id="lw" type="password">${bad(err)}<p><button onclick="login()">دخول</button></p><p style="color:var(--mu);font-size:14px">لا يمكن إنشاء حساب إلا عند شراء كورس. اذهب إلى <a href="#courses" style="color:var(--pr)">الكورسات</a> واختر كورسك.</p></div>`;return}
+ const pr={};try{(await db.collection(`users/${U.uid}/prog`).get()).forEach(d=>pr[d.id]=d.data())}catch(e){}
+ const st=Object.keys(EN).map(id=>{const c=CO.find(x=>x.id===id);if(!c)return null;const n=c.L.filter(l=>pr[l.id]).length,k=c.L.filter(l=>pr[l.id]&&pr[l.id].ok).length;return{c,n,k,p:c.L.length?Math.round(n/c.L.length*100):0,a:EN[id].st==='active'}}).filter(Boolean);
+ const rep=encodeURIComponent(`تقرير متابعة الطالب ${P?P.fn+' '+P.ln:''} من منصة أ/أحمد البياع:\n`+st.map(x=>`- ${x.c.t}: أنجز ${x.n}/${x.c.L.length} دروس، صحيح ${x.k}`).join('\n'));
+ app.innerHTML=`<h2>أهلاً ${esc(P?P.fn:'أستاذ أحمد')} 👋</h2><div class="card">${P?`<p>${esc(P.fn+' '+P.ln)} · ${gn(P.g)}<br>هاتفك: ${esc(P.ph)} · ولي الأمر: ${esc(P.pp)}</p>`:''}${P?`<a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${esc(P.pp)}?text=${rep}">إرسال تقرير لولي الأمر</a> `:''}<button class="s" onclick="au.signOut()">تسجيل خروج</button></div><h2>كورساتي</h2>${st.map(x=>`<div class="card" style="margin-top:10px"><b>${esc(x.c.e)} ${esc(x.c.t)}</b> <span class="tag">${x.a?'مفعّل':'قيد المراجعة'}</span><div class="bar"><i style="width:${x.p}%"></i></div><small>تقدم ${x.p}% · إجابات صحيحة ${x.k}/${x.c.L.length}</small> <a href="#course/${x.c.id}" style="color:var(--pr)">فتح</a></div>`).join('')||'<p>لا توجد اشتراكات بعد.</p>'}`}
+async function login(){try{await au.signInWithEmailAndPassword(mail($('#lp').value.trim()),$('#lw').value);err=''}catch(e){err='بيانات الدخول غير صحيحة.';account()}}
+async function admin(){if(!ADM){location.hash='home';return}
+ let h=`<h2>لوحة التحكم</h2><div class="chips">${[['c','الكورسات'],['l','الدروس'],['r','طلبات الاشتراك']].map(t=>`<button class="${AT===t[0]?'on':''}" onclick="AT='${t[0]}';admin()">${t[1]}</button>`).join('')}</div>${bad(err)}`;err='';
+ if(AT==='c')h+=`<div class="card"><h3>إضافة كورس</h3><div class="row"><div><label>اسم الكورس</label><input id="ct"></div><div><label>السعر (ج.م)</label><input id="cp" inputmode="numeric"></div><div><label>الصف</label><select id="cg">${G.map(g=>`<option value="${g[0]}">${g[1]}</option>`).join('')}</select></div><div><label>رمز (إيموجي)</label><input id="ce" value="📖"></div></div><p><button onclick="addC()">إضافة</button></p></div>${CO.map(c=>`<div class="ls"><span style="flex:1">${esc(c.e)} ${esc(c.t)} · ${c.pr} ج.م · ${c.L.length} دروس</span><button class="s" onclick="delC('${c.id}')">حذف</button></div>`).join('')}`;
+ if(AT==='l'){const c=CO.find(x=>x.id===AC);h+=`<div class="card"><label>اختر الكورس</label><select onchange="AC=this.value;admin()"><option value="">--</option>${CO.map(x=>`<option value="${x.id}" ${x.id===AC?'selected':''}>${esc(x.t)}</option>`).join('')}</select>${c?`<h3 style="margin-top:14px">إضافة درس</h3><label>عنوان الدرس</label><input id="lt"><label>رابط الفيديو (يوتيوب غير مدرج أو درايف)</label><input id="lu" dir="ltr"><label>سؤال الاختبار (اختياري)</label><input id="lq"><div class="row"><div><label>الاختيار 1</label><input id="lo1"></div><div><label>الاختيار 2</label><input id="lo2"></div><div><label>الاختيار 3</label><input id="lo3"></div><div><label>رقم الإجابة الصحيحة</label><select id="la"><option>1</option><option>2</option><option>3</option></select></div></div><p><button onclick="addL()">إضافة الدرس</button></p>`:''}</div>${c?c.L.map((l,i)=>`<div class="ls"><span class="n">${i+1}</span><span style="flex:1">${esc(l.t)}</span><button class="s" onclick="delL('${l.id}')">حذف</button></div>`).join(''):''}`}
+ if(AT==='r'){app.innerHTML=h+'<p>جارٍ التحميل...</p>';const s=await db.collection('enrollments').where('st','==','pending').get();h+=s.docs.map(d=>{const e=d.data(),c=CO.find(x=>x.id===e.cid);return`<div class="card" style="margin-top:10px"><b>${esc(e.name)}</b> · ${esc(e.ph)}<br>${c?esc(c.t):''}<br>الرقم التأكيدي: <b dir="ltr">${esc(e.ref)}</b> · محوَّل من: ${esc(e.sp)} · آخر 4: ${esc(e.tx)}<p><button onclick="setE('${d.id}',1)">تفعيل</button> <button class="s" onclick="setE('${d.id}',0)">رفض</button></p></div>`}).join('')||'<p>لا توجد طلبات معلقة.</p>'}
+ app.innerHTML=h}
+async function addC(){const v=i=>$('#'+i).value.trim();if(!v('ct')||!(+v('cp')>0)){err='أدخل اسم الكورس وسعراً صحيحاً.';return admin()}
+ await db.collection('courses').add({t:v('ct'),g:v('cg'),pr:+v('cp'),e:v('ce')||'📖',o:Date.now()});await loadCO();admin()}
+async function delC(id){if(!confirm('حذف الكورس وكل دروسه؟'))return;const b=db.batch();for(const n of['lessons','media'])(await db.collection(`courses/${id}/${n}`).get()).forEach(d=>b.delete(d.ref));b.delete(db.doc('courses/'+id));await b.commit();await loadCO();admin()}
+async function addL(){const v=i=>$('#'+i).value.trim();if(!AC||!v('lt')||!embed(v('lu'))){err='أدخل عنوان الدرس ورابط يوتيوب أو درايف صحيحاً.';return admin()}
+ const id=db.collection('x').doc().id,b=db.batch();
+ b.set(db.doc(`courses/${AC}/lessons/${id}`),{t:v('lt'),o:Date.now()});
+ b.set(db.doc(`courses/${AC}/media/${id}`),{url:v('lu'),q:v('lq'),o:[v('lo1'),v('lo2'),v('lo3')].filter(Boolean),a:+$('#la').value-1});
+ await b.commit();await loadCO();admin()}
+async function delL(id){if(!confirm('حذف الدرس؟'))return;const b=db.batch();b.delete(db.doc(`courses/${AC}/lessons/${id}`));b.delete(db.doc(`courses/${AC}/media/${id}`));await b.commit();delete MM[id];await loadCO();admin()}
+async function setE(id,ok){if(ok)await db.doc('enrollments/'+id).update({st:'active'});else await db.doc('enrollments/'+id).delete();admin()}
+document.addEventListener('keydown',e=>{if(e.ctrlKey&&['s','p','u'].includes(e.key.toLowerCase())||e.key==='PrintScreen')e.preventDefault()});
+addEventListener('hashchange',()=>{err='';render()});render();
+</script>
+</body>
+</html>
