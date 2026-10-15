@@ -52,85 +52,85 @@ footer a{color:var(--mu);margin:0 8px;text-decoration:none}footer h3{color:var(-
 <div class="soc"><a href="https://www.facebook.com/ahmedmohamedelbiaa" target="_blank" rel="noopener">فيسبوك</a><a href="https://www.instagram.com/ahmedmelbiaa/" target="_blank" rel="noopener">انستجرام</a><a href="https://www.youtube.com/@mrahmedelbiaa" target="_blank" rel="noopener">يوتيوب</a><a href="https://www.tiktok.com/@mr.ahmedelbiaa" target="_blank" rel="noopener">تيك توك</a><a href="https://wa.me/201025238488" target="_blank" rel="noopener">واتساب الدعم</a></div>
 <div><a href="https://hadeerghanem.com/about/">عن المنصة</a><a href="https://hadeerghanem.com/privacy/">سياسة الخصوصية</a><a href="https://hadeerghanem.com/terms/">شروط الاستخدام</a><a href="https://hadeerghanem.com/refund-policy/">سياسة الاسترجاع</a></div>
 <p>© 2026 جميع الحقوق محفوظة</p></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
+// ===== ضع هنا إعدادات مشروع Firebase الخاص بك =====
+const FB={apiKey:"AIzaSyDx7JlC7qbSIBfQG7D7gTHboLySDyLMhLU",authDomain:"bayaa-platform.firebaseapp.com",projectId:"bayaa-platform",appId:"1:888921596940:web:93737ccda8ce327b13fa29"};
 const G=[['p1','الصف الأول الإعدادي','إعدادي'],['p2','الصف الثاني الإعدادي','إعدادي'],['p3','الصف الثالث الإعدادي','إعدادي'],['s1','الصف الأول الثانوي','ثانوي'],['s2','الصف الثاني الثانوي','ثانوي'],['s3','الصف الثالث الثانوي','ثانوي']];
-const L=(t,q,o,a)=>({t,v:'',q,o,a}); // v = رابط الفيديو (ملف mp4)
-const CO=[
-{id:'c1',g:'p1',t:'اللغة العربية - الصف الأول الإعدادي',e:'📖',pr:150,L:[L('أقسام الكلام','أي من الآتي فعل؟',['كتب','كتاب','مكتبة'],0),L('الجملة الاسمية','ما إعراب المبتدأ في الجملة الاسمية؟',['مرفوع','منصوب','مجرور'],0)]},
-{id:'c2',g:'p2',t:'اللغة العربية - الصف الثاني الإعدادي',e:'✍️',pr:150,L:[L('الفاعل ونائب الفاعل','الفاعل في الجملة الفعلية يكون:',['مرفوعاً','منصوباً','مجروراً'],0),L('المفعول به','المفعول به يكون:',['منصوباً','مرفوعاً','مجزوماً'],0)]},
-{id:'c3',g:'p3',t:'اللغة العربية - الصف الثالث الإعدادي',e:'📝',pr:150,L:[L('كان وأخواتها','خبر كان يكون:',['منصوباً','مرفوعاً','مجروراً'],0),L('إن وأخواتها','اسم إن يكون:',['منصوباً','مرفوعاً','مجزوماً'],0)]},
-{id:'c4',g:'s1',t:'اللغة العربية - الصف الأول الثانوي',e:'📚',pr:200,L:[L('البلاغة: التشبيه','أي مما يلي من أركان التشبيه؟',['المشبه به','المفعول المطلق','الحال'],0),L('الأدب الجاهلي','من أشهر شعراء المعلقات؟',['امرؤ القيس','المتنبي','أحمد شوقي'],0)]},
-{id:'c5',g:'s2',t:'اللغة العربية - الصف الثاني الثانوي',e:'🖋️',pr:200,L:[L('الاستعارة','في الاستعارة يُحذف:',['أحد طرفي التشبيه','الفاعل','المبتدأ'],0),L('الأدب الأموي','اشتهر جرير والفرزدق بفن:',['النقائض','المقامات','الموشحات'],0)]},
-{id:'c6',g:'s3',t:'اللغة العربية - الصف الثالث الثانوي',e:'🎓',pr:250,L:[L('الأدب الأندلسي','ما الفن الأدبي الذي ازدهر في الأندلس؟',['الموشحات','المعلقات','النقائض'],0),L('النقد الأدبي','من أعلام النقد والبلاغة القدماء:',['عبد القاهر الجرجاني','أحمد شوقي','نجيب محفوظ'],0)]}];
-const CODES=['DEMO-2026']; // أكواد التفعيل التجريبية - تُستبدل بقاعدة بيانات حقيقية
 const FT=[['🌍','التعلم من أي مكان','شاهد دروسك في أي وقت ومن أي جهاز.'],['📝','اختبارات إلكترونية','اختبر مستواك بعد كل درس بشكل فوري.'],['👨‍👩‍👦','متابعة ولي الأمر','يتابع ولي الأمر أداء ابنه أولًا بأول.'],['💡','شرح بسيط ومفهوم','نبسّط المفاهيم الصعبة بأسلوب واضح وسهل الفهم.'],['🎨','فيديوهات برسومات توضيحية','فيديوهات مشروحة برسومات توضيحية تسهّل الاستيعاب.'],['🎯','تمارين تفاعلية على الدروس','تمارين تفاعلية بعد كل درس لتثبيت المعلومة.'],['🔄','تحديث مستمر حسب المنهج','تحديث مستمر للمحتوى بما يواكب المنهج الدراسي.'],['👥','مجتمع طلابي ضخم','انضم لمجتمع كبير من الطلاب على نفس المسار.']];
 const PAY='01025238488';
-let D={users:[],me:''};try{D=JSON.parse(localStorage.getItem('hg')||'')||D}catch(e){}
-const sv=()=>{try{localStorage.setItem('hg',JSON.stringify(D))}catch(e){}};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=s=>document.querySelector(s),app=$('#app');
-const me=()=>D.users.find(u=>u.ph===D.me);
-const gn=id=>G.find(g=>g[0]===id)[1];
-const active=(u,c)=>u&&u.enr[c]&&u.enr[c].st==='active';
-let flt='all',err='',A={};
-function render(){
- const[p,a,b]=location.hash.slice(1).split('/');const pg=p||'home';
- document.querySelectorAll('nav a').forEach(x=>x.classList.toggle('on',x.dataset.p===(pg==='course'||pg==='lesson'?'courses':pg)));
- ({home,courses,course:()=>course(a),lesson:()=>lesson(a,+b),account})[pg]?.();scrollTo(0,0);
-}
 function cc(c){return`<div class="card c" onclick="location.hash='course/${c.id}'"><div class="e">${c.e}</div><h3>${c.t}</h3><p><span class="tag">${gn(c.g)}</span> · ${c.L.length} دروس</p><span class="price">${c.pr} ج.م</span></div>`}
 function home(){
  app.innerHTML=`<div class="hero"><h1>مرحباً بك في منصة أ/أحمد البياع</h1><p>اللغة العربية لطلاب الإعدادي والثانوي في مصر.</p><a class="btn" style="background:#fff;color:#0f9d76" href="#courses">تصفح الكورسات</a></div>
  <h2>اختر مرحلتك الدراسية</h2>${['إعدادي','ثانوي'].map(s=>`<h3>المرحلة ال${s}ة</h3><div class="grid">${G.filter(g=>g[2]===s).map(g=>`<div class="card c" onclick="flt='${g[0]}';location.hash='courses'"><div class="e">${s==='إعدادي'?'📘':'📗'}</div><h3>${g[1]}</h3></div>`).join('')}</div>`).join('')}
  <h2>مميزات المنصة</h2><p style="color:var(--mu);margin-top:-6px">كل ما تحتاجه لرحلة تعليمية متكاملة</p><div class="grid">${FT.map(f=>`<div class="card"><div class="e">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></div>`).join('')}</div>`;
 }
-function courses(){
- app.innerHTML=`<h2>الكورسات</h2><div class="chips"><button class="${flt==='all'?'on':''}" onclick="flt='all';courses()">الكل</button>${G.map(g=>`<button class="${flt===g[0]?'on':''}" onclick="flt='${g[0]}';courses()">${g[1]}</button>`).join('')}</div><div class="grid">${CO.filter(c=>flt==='all'||c.g===flt).map(cc).join('')}</div>`;
-}
-function course(id){
- const c=CO.find(x=>x.id===id);if(!c)return courses();const u=me(),en=u&&u.enr[id];
- let box='';
- if(!en||en.st==='none'||!active(u,id)){
-  if(!u)box=reg(c);
-  else if(!en)box=payBox(c);
-  else box=waitBox(c,en);
- }
- app.innerHTML=`<a href="#courses" style="color:var(--pr)">→ كل الكورسات</a><h2>${c.e} ${c.t}</h2><span class="tag">${gn(c.g)}</span> <span class="price">${c.pr} ج.م</span>
- ${box}<div>${c.L.map((l,i)=>`<div class="ls ${u&&u.prog[id+':'+i]!=null?'d':''}" onclick="${active(u,id)?`location.hash='lesson/${id}/${i}'`:`alert('اشترك في الكورس أولاً لفتح الدروس')`}"><span class="n">${active(u,id)?(i+1):'🔒'}</span>${esc(l.t)}</div>`).join('')}</div>`;
-}
-function reg(c){return`<div class="card" style="margin:14px 0"><h3>إنشاء حساب والاشتراك في الكورس</h3><p>التسجيل يتم عند شراء الكورس.</p><div class="row"><div><label>الاسم الأول</label><input id="fn"></div><div><label>الاسم الثاني</label><input id="ln"></div><div><label>رقم الهاتف</label><input id="ph" inputmode="numeric" maxlength="11"></div><div><label>رقم هاتف ولي الأمر</label><input id="pp" inputmode="numeric" maxlength="11"></div></div><label>كلمة المرور</label><input id="pw" type="password"><label>المرحلة الدراسية</label><select id="gr">${G.map(g=>`<option value="${g[0]}" ${g[0]===c.g?'selected':''}>${g[1]}</option>`).join('')}</select>${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="doReg('${c.id}')">متابعة للدفع</button></p></div>`}
-function doReg(cid){
- const v=i=>$('#'+i).value.trim(),ph=/^01\d{9}$/;err='';
- if(!v('fn')||!v('ln'))err='أدخل الاسم الأول والثاني.';else if(!ph.test(v('ph'))||!ph.test(v('pp')))err='أدخل رقمي هاتف صحيحين (11 رقماً يبدأ بـ 01).';else if(v('pw').length<6)err='كلمة المرور 6 أحرف على الأقل.';else if(D.users.some(u=>u.ph===v('ph')))err='هذا الرقم مسجل بالفعل، سجّل الدخول من صفحة حسابي.';
- if(err)return course(cid);
- D.users.push({fn:v('fn'),ln:v('ln'),ph:v('ph'),pp:v('pp'),pw:v('pw'),g:v('gr'),enr:{},prog:{}});D.me=v('ph');sv();course(cid);
-}
-function payBox(c){return`<div class="card" style="margin:14px 0"><h3>الدفع عبر فودافون كاش</h3><ol><li>حوّل مبلغ <b>${c.pr} ج.م</b> على الرقم <b dir="ltr">${PAY}</b> عبر فودافون كاش.</li><li>أدخل رقم الهاتف الذي حوّلت منه وآخر 4 أرقام من رقم العملية.</li><li>سيظهر لك رقم تأكيدي، أرسله لنا على واتساب لتفعيل الكورس.</li></ol><label>رقم الهاتف المحوَّل منه</label><input id="sp" inputmode="numeric" maxlength="11"><label>آخر 4 أرقام من رقم العملية</label><input id="tx" inputmode="numeric" maxlength="4">${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="doPay('${c.id}')">تأكيد الدفع</button></p></div>`}
-function doPay(cid){const u=me(),sp=$('#sp').value.trim(),tx=$('#tx').value.trim();err='';
+firebase.initializeApp(FB);const au=firebase.auth(),db=firebase.firestore();
+const mail=p=>p+'@bayaa.app',gn=id=>(G.find(g=>g[0]===id)||[0,'-'])[1];
+let U=null,P=null,ADM=false,CO=[],EN={},flt='all',err='',AT='c',AC='',A={},MM={};
+const bad=m=>m?`<div class="msg er">${m}</div>`:'';
+const act=id=>ADM||(EN[id]&&EN[id].st==='active');
+function embed(u){u=u||'';let m=u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);if(m)return'https://www.youtube.com/embed/'+m[1]+'?rel=0&modestbranding=1';
+ if(/drive\.google\.com/.test(u)){m=u.match(/\/d\/([\w-]+)/)||u.match(/[?&]id=([\w-]+)/);if(m)return'https://drive.google.com/file/d/'+m[1]+'/preview'}return''}
+async function loadCO(){const s=await db.collection('courses').orderBy('o').get();CO=await Promise.all(s.docs.map(async d=>{const l=await db.collection('courses/'+d.id+'/lessons').orderBy('o').get();return{id:d.id,...d.data(),L:l.docs.map(x=>({id:x.id,...x.data()}))}}))}
+async function loadEN(){EN={};if(!U)return;const s=await db.collection('enrollments').where('uid','==',U.uid).get();s.forEach(d=>EN[d.data().cid]=d.data())}
+au.onAuthStateChanged(async u=>{U=u;ADM=false;if(!u)P=null;else{try{const d=await db.doc('users/'+u.uid).get();if(d.exists)P=d.data();ADM=(await db.doc('admins/'+u.uid).get()).exists}catch(e){}}
+ try{await loadEN()}catch(e){}try{await loadCO()}catch(e){CO=[]}render()});
+function render(){const[p,a,b]=location.hash.slice(1).split('/');const pg=p||'home';
+ document.querySelectorAll('#adm').forEach(x=>x.remove());
+ if(ADM)$('#nav').insertAdjacentHTML('beforeend','<a id="adm" href="#admin" data-p="admin">لوحة التحكم</a>');
+ document.querySelectorAll('nav a').forEach(x=>x.classList.toggle('on',x.dataset.p===(pg==='course'||pg==='lesson'?'courses':pg)));
+ ({home,courses,course:()=>course(a),lesson:()=>lesson(a,b),account,admin})[pg]?.();scrollTo(0,0)}
+function courses(){app.innerHTML=`<h2>الكورسات</h2><div class="chips"><button class="${flt==='all'?'on':''}" onclick="flt='all';courses()">الكل</button>${G.map(g=>`<button class="${flt===g[0]?'on':''}" onclick="flt='${g[0]}';courses()">${g[1]}</button>`).join('')}</div><div class="grid">${CO.filter(c=>flt==='all'||c.g===flt).map(cc).join('')||'<p>لا توجد كورسات بعد.</p>'}</div>`}
+function course(id){const c=CO.find(x=>x.id===id);if(!c)return courses();let box='';
+ if(!act(id))box=!U?reg(c):!EN[id]?payBox(c):waitBox(c,EN[id]);
+ app.innerHTML=`<a href="#courses" style="color:var(--pr)">→ كل الكورسات</a><h2>${esc(c.e)} ${esc(c.t)}</h2><span class="tag">${gn(c.g)}</span> <span class="price">${c.pr} ج.م</span>${box}<div>${c.L.map((l,i)=>`<div class="ls" onclick="${act(id)?`location.hash='lesson/${id}/${l.id}'`:`alert('اشترك في الكورس أولاً لفتح الدروس')`}"><span class="n">${act(id)?i+1:'🔒'}</span>${esc(l.t)}</div>`).join('')}</div>`}
+function reg(c){return`<div class="card" style="margin:14px 0"><h3>إنشاء حساب والاشتراك في الكورس</h3><p>التسجيل يتم عند شراء الكورس. لديك حساب؟ <a href="#account" style="color:var(--pr)">سجّل الدخول</a></p><div class="row"><div><label>الاسم الأول</label><input id="fn"></div><div><label>الاسم الثاني</label><input id="ln"></div><div><label>رقم الهاتف</label><input id="ph" inputmode="numeric" maxlength="11"></div><div><label>رقم هاتف ولي الأمر</label><input id="pp" inputmode="numeric" maxlength="11"></div></div><label>كلمة المرور</label><input id="pw" type="password"><label>المرحلة الدراسية</label><select id="gr">${G.map(g=>`<option value="${g[0]}" ${g[0]===c.g?'selected':''}>${g[1]}</option>`).join('')}</select>${bad(err)}<p><button onclick="doReg('${c.id}')">متابعة للدفع</button></p></div>`}
+async function doReg(cid){const v=i=>$('#'+i).value.trim(),ph=/^01\d{9}$/;err='';
+ if(!v('fn')||!v('ln'))err='أدخل الاسم الأول والثاني.';else if(!ph.test(v('ph'))||!ph.test(v('pp')))err='أدخل رقمي هاتف صحيحين (11 رقماً يبدأ بـ 01).';else if(v('pw').length<6)err='كلمة المرور 6 أحرف على الأقل.';
+ if(!err)try{const r=await au.createUserWithEmailAndPassword(mail(v('ph')),v('pw'));P={fn:v('fn'),ln:v('ln'),ph:v('ph'),pp:v('pp'),g:v('gr')};await db.doc('users/'+r.user.uid).set(P)}catch(e){err=e.code==='auth/email-already-in-use'?'هذا الرقم مسجل بالفعل، سجّل الدخول من صفحة حسابي.':'تعذر التسجيل، حاول مرة أخرى.'}
+ course(cid)}
+function payBox(c){return`<div class="card" style="margin:14px 0"><h3>الدفع عبر فودافون كاش</h3><ol><li>حوّل مبلغ <b>${c.pr} ج.م</b> على الرقم <b dir="ltr">${PAY}</b> عبر فودافون كاش.</li><li>أدخل رقم الهاتف الذي حوّلت منه وآخر 4 أرقام من رقم العملية.</li><li>سيظهر لك رقم تأكيدي، وسيتم تفعيل الكورس بعد مراجعة التحويل.</li></ol><label>رقم الهاتف المحوَّل منه</label><input id="sp" inputmode="numeric" maxlength="11"><label>آخر 4 أرقام من رقم العملية</label><input id="tx" inputmode="numeric" maxlength="4">${bad(err)}<p><button onclick="doPay('${c.id}')">تأكيد الدفع</button></p></div>`}
+async function doPay(cid){const sp=$('#sp').value.trim(),tx=$('#tx').value.trim();err='';
  if(!/^01\d{9}$/.test(sp)||!/^\d{4}$/.test(tx)){err='تأكد من رقم الهاتف وآخر 4 أرقام.';return course(cid)}
- u.enr[cid]={st:'pending',ref:'HG-'+Math.floor(100000+Math.random()*900000),sp,tx};sv();course(cid);}
-function waitBox(c,en){const m=encodeURIComponent(`مرحباً، قمت بدفع ${c.pr} ج.م لكورس (${c.t}). الرقم التأكيدي: ${en.ref} - هاتفي: ${D.me}`);
- return`<div class="card" style="margin:14px 0"><div class="msg ok">تم استلام طلبك ✅ رقمك التأكيدي: <b dir="ltr">${en.ref}</b></div><p>أرسل هذا الرقم لخدمة العملاء ليتم تفعيل الكورس، وستحصل على كود التفعيل.</p><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${PAY}?text=${m}">إرسال على واتساب</a><label>كود التفعيل</label><input id="ac" dir="ltr">${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="doAct('${c.id}')">تفعيل الكورس</button></p></div>`}
-function doAct(cid){const u=me();err='';if(CODES.includes($('#ac').value.trim().toUpperCase())){u.enr[cid].st='active';sv()}else err='كود التفعيل غير صحيح.';course(cid)}
-function lesson(cid,i){
- const c=CO.find(x=>x.id===cid),u=me();if(!c||!active(u,cid)){location.hash='course/'+cid;return}
- const l=c.L[i],k=cid+':'+i,s=A[k];
- app.innerHTML=`<a href="#course/${cid}" style="color:var(--pr)">→ ${c.t}</a><h2>${i+1}. ${esc(l.t)}</h2>
- <div class="vid" oncontextmenu="return false">${l.v?`<video src="${esc(l.v)}" controls controlsList="nodownload noplaybackrate" disablePictureInPicture></video>`:'🎬 سيظهر هنا فيديو الدرس'}<span class="wm">${esc(u.fn+' '+u.ln)} - ${u.ph}</span></div>
- <div class="card" style="margin-top:14px"><h3>اختبر نفسك</h3><p>${esc(l.q)}</p>${l.o.map((o,j)=>`<button class="o ${s!=null?(j===l.a?'ok':j===s?'no':''):''}" onclick="ans('${cid}',${i},${j})">${esc(o)}</button>`).join('')}${s!=null?`<div class="msg ${s===l.a?'ok':'er'}">${s===l.a?'إجابة صحيحة 🎉':'إجابة خاطئة، الصحيحة: '+esc(l.o[l.a])}</div>`:''}</div>
- <p>${i?`<a class="btn s" href="#lesson/${cid}/${i-1}">السابق</a> `:''}${i<c.L.length-1?`<a class="btn" href="#lesson/${cid}/${i+1}">التالي</a>`:''}</p>`;
-}
-function ans(cid,i,j){const k=cid+':'+i;if(A[k]!=null)return;A[k]=j;me().prog[k]=j===CO.find(x=>x.id===cid).L[i].a?1:0;sv();lesson(cid,i)}
-function account(){
- const u=me();
- if(!u||!Object.keys(u.enr).length){
-  app.innerHTML=`<h2>تسجيل الدخول</h2><div class="card"><label>رقم الهاتف</label><input id="lp" inputmode="numeric"><label>كلمة المرور</label><input id="lw" type="password">${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="login()">دخول</button></p><p style="color:var(--mu);font-size:14px">لا يمكن إنشاء حساب إلا عند شراء كورس. اذهب إلى <a href="#courses" style="color:var(--pr)">الكورسات</a> واختر كورسك.</p></div>`;return}
- const rows=Object.keys(u.enr).map(id=>{const c=CO.find(x=>x.id===id),en=u.enr[id],n=c.L.filter((_,i)=>u.prog[id+':'+i]!=null).length,ok=c.L.filter((_,i)=>u.prog[id+':'+i]===1).length,p=Math.round(n/c.L.length*100);
-  return`<div class="card" style="margin-top:10px"><b>${c.e} ${c.t}</b> <span class="tag">${en.st==='active'?'مفعّل':'قيد المراجعة'}</span><div class="bar"><i style="width:${p}%"></i></div><small>تقدم ${p}% · إجابات صحيحة ${ok}/${c.L.length}</small> <a href="#course/${id}" style="color:var(--pr)">فتح</a></div>`}).join('');
- const rep=encodeURIComponent(`تقرير متابعة الطالب ${u.fn} ${u.ln} من منصة أ/أحمد البياع:\n`+Object.keys(u.enr).map(id=>{const c=CO.find(x=>x.id===id);return `- ${c.t}: أنجز ${c.L.filter((_,i)=>u.prog[id+':'+i]!=null).length}/${c.L.length} دروس، صحيح ${c.L.filter((_,i)=>u.prog[id+':'+i]===1).length}`}).join('\n'));
- app.innerHTML=`<h2>أهلاً ${esc(u.fn)} 👋</h2><div class="card"><p>${esc(u.fn+' '+u.ln)} · ${gn(u.g)}<br>هاتفك: ${esc(u.ph)} · ولي الأمر: ${esc(u.pp)}</p><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${esc(u.pp)}?text=${rep}">إرسال تقرير لولي الأمر</a> <button class="s" onclick="D.me='';sv();account()">تسجيل خروج</button></div><h2>كورساتي</h2>${rows}`;
-}
-function login(){const u=D.users.find(x=>x.ph===$('#lp').value.trim()&&x.pw===$('#lw').value);if(u&&Object.keys(u.enr).length){D.me=u.ph;sv();err=''}else err='بيانات الدخول غير صحيحة أو لا يوجد اشتراك.';account()}
+ const e={uid:U.uid,cid,st:'pending',ref:'AB-'+Math.floor(100000+Math.random()*900000),sp,tx,name:P?P.fn+' '+P.ln:'',ph:P?P.ph:'',t:Date.now()};
+ try{await db.doc('enrollments/'+U.uid+'_'+cid).set(e);EN[cid]=e}catch(x){err='تعذر إرسال الطلب، حاول مرة أخرى.'}course(cid)}
+function waitBox(c,en){const m=encodeURIComponent(`مرحباً، قمت بدفع ${c.pr} ج.م لكورس (${c.t}). الرقم التأكيدي: ${en.ref}`);
+ return`<div class="card" style="margin:14px 0"><div class="msg ok">تم استلام طلبك ✅ رقمك التأكيدي: <b dir="ltr">${en.ref}</b></div><p>سيتم تفعيل الكورس بعد مراجعة التحويل. يمكنك إرسال الرقم التأكيدي لخدمة العملاء لتسريع التفعيل.</p><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${PAY}?text=${m}">إرسال على واتساب</a></div>`}
+async function lesson(cid,lid){const c=CO.find(x=>x.id===cid),l=c&&c.L.find(x=>x.id===lid);if(!l||!act(cid)){location.hash='course/'+cid;return}
+ const i=c.L.indexOf(l);if(!MM[lid]){app.innerHTML='<p>جارٍ التحميل...</p>';try{MM[lid]=(await db.doc(`courses/${cid}/media/${lid}`).get()).data()}catch(e){}}
+ const m=MM[lid];if(!m){app.innerHTML=bad('تعذر تحميل الدرس.');return}const em=embed(m.url),s=A[lid],o=m.o||[];
+ app.innerHTML=`<a href="#course/${cid}" style="color:var(--pr)">→ ${esc(c.t)}</a><h2>${i+1}. ${esc(l.t)}</h2><div class="vid" oncontextmenu="return false">${em?`<iframe src="${em}" allow="encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="width:100%;height:100%;border:0"></iframe>`:'رابط الفيديو غير مدعوم'}<span class="wm">${P?esc(P.fn+' - '+P.ph):''}</span></div>
+ ${m.q?`<div class="card" style="margin-top:14px"><h3>اختبر نفسك</h3><p>${esc(m.q)}</p>${o.map((t,j)=>`<button class="o ${s!=null?(j===m.a?'ok':j===s?'no':''):''}" onclick="ans('${cid}','${lid}',${j})">${esc(t)}</button>`).join('')}${s!=null?`<div class="msg ${s===m.a?'ok':'er'}">${s===m.a?'إجابة صحيحة 🎉':'إجابة خاطئة، الصحيحة: '+esc(o[m.a])}</div>`:''}</div>`:''}
+ <p>${i?`<a class="btn s" href="#lesson/${cid}/${c.L[i-1].id}">السابق</a> `:''}${i<c.L.length-1?`<a class="btn" href="#lesson/${cid}/${c.L[i+1].id}">التالي</a>`:''}</p>`}
+async function ans(cid,lid,j){if(A[lid]!=null)return;A[lid]=j;if(U)try{await db.doc(`users/${U.uid}/prog/${lid}`).set({cid,ok:j===MM[lid].a?1:0})}catch(e){}lesson(cid,lid)}
+async function account(){
+ if(!U){app.innerHTML=`<h2>تسجيل الدخول</h2><div class="card"><label>رقم الهاتف</label><input id="lp" inputmode="numeric"><label>كلمة المرور</label><input id="lw" type="password">${bad(err)}<p><button onclick="login()">دخول</button></p><p style="color:var(--mu);font-size:14px">لا يمكن إنشاء حساب إلا عند شراء كورس. اذهب إلى <a href="#courses" style="color:var(--pr)">الكورسات</a> واختر كورسك.</p></div>`;return}
+ const pr={};try{(await db.collection(`users/${U.uid}/prog`).get()).forEach(d=>pr[d.id]=d.data())}catch(e){}
+ const st=Object.keys(EN).map(id=>{const c=CO.find(x=>x.id===id);if(!c)return null;const n=c.L.filter(l=>pr[l.id]).length,k=c.L.filter(l=>pr[l.id]&&pr[l.id].ok).length;return{c,n,k,p:c.L.length?Math.round(n/c.L.length*100):0,a:EN[id].st==='active'}}).filter(Boolean);
+ const rep=encodeURIComponent(`تقرير متابعة الطالب ${P?P.fn+' '+P.ln:''} من منصة أ/أحمد البياع:\n`+st.map(x=>`- ${x.c.t}: أنجز ${x.n}/${x.c.L.length} دروس، صحيح ${x.k}`).join('\n'));
+ app.innerHTML=`<h2>أهلاً ${esc(P?P.fn:'أستاذ أحمد')} 👋</h2><div class="card">${P?`<p>${esc(P.fn+' '+P.ln)} · ${gn(P.g)}<br>هاتفك: ${esc(P.ph)} · ولي الأمر: ${esc(P.pp)}</p>`:''}${P?`<a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${esc(P.pp)}?text=${rep}">إرسال تقرير لولي الأمر</a> `:''}<button class="s" onclick="au.signOut()">تسجيل خروج</button></div><h2>كورساتي</h2>${st.map(x=>`<div class="card" style="margin-top:10px"><b>${esc(x.c.e)} ${esc(x.c.t)}</b> <span class="tag">${x.a?'مفعّل':'قيد المراجعة'}</span><div class="bar"><i style="width:${x.p}%"></i></div><small>تقدم ${x.p}% · إجابات صحيحة ${x.k}/${x.c.L.length}</small> <a href="#course/${x.c.id}" style="color:var(--pr)">فتح</a></div>`).join('')||'<p>لا توجد اشتراكات بعد.</p>'}`}
+async function login(){try{await au.signInWithEmailAndPassword(mail($('#lp').value.trim()),$('#lw').value);err=''}catch(e){err='بيانات الدخول غير صحيحة.';account()}}
+async function admin(){if(!ADM){location.hash='home';return}
+ let h=`<h2>لوحة التحكم</h2><div class="chips">${[['c','الكورسات'],['l','الدروس'],['r','طلبات الاشتراك']].map(t=>`<button class="${AT===t[0]?'on':''}" onclick="AT='${t[0]}';admin()">${t[1]}</button>`).join('')}</div>${bad(err)}`;err='';
+ if(AT==='c')h+=`<div class="card"><h3>إضافة كورس</h3><div class="row"><div><label>اسم الكورس</label><input id="ct"></div><div><label>السعر (ج.م)</label><input id="cp" inputmode="numeric"></div><div><label>الصف</label><select id="cg">${G.map(g=>`<option value="${g[0]}">${g[1]}</option>`).join('')}</select></div><div><label>رمز (إيموجي)</label><input id="ce" value="📖"></div></div><p><button onclick="addC()">إضافة</button></p></div>${CO.map(c=>`<div class="ls"><span style="flex:1">${esc(c.e)} ${esc(c.t)} · ${c.pr} ج.م · ${c.L.length} دروس</span><button class="s" onclick="delC('${c.id}')">حذف</button></div>`).join('')}`;
+ if(AT==='l'){const c=CO.find(x=>x.id===AC);h+=`<div class="card"><label>اختر الكورس</label><select onchange="AC=this.value;admin()"><option value="">--</option>${CO.map(x=>`<option value="${x.id}" ${x.id===AC?'selected':''}>${esc(x.t)}</option>`).join('')}</select>${c?`<h3 style="margin-top:14px">إضافة درس</h3><label>عنوان الدرس</label><input id="lt"><label>رابط الفيديو (يوتيوب غير مدرج أو درايف)</label><input id="lu" dir="ltr"><label>سؤال الاختبار (اختياري)</label><input id="lq"><div class="row"><div><label>الاختيار 1</label><input id="lo1"></div><div><label>الاختيار 2</label><input id="lo2"></div><div><label>الاختيار 3</label><input id="lo3"></div><div><label>رقم الإجابة الصحيحة</label><select id="la"><option>1</option><option>2</option><option>3</option></select></div></div><p><button onclick="addL()">إضافة الدرس</button></p>`:''}</div>${c?c.L.map((l,i)=>`<div class="ls"><span class="n">${i+1}</span><span style="flex:1">${esc(l.t)}</span><button class="s" onclick="delL('${l.id}')">حذف</button></div>`).join(''):''}`}
+ if(AT==='r'){app.innerHTML=h+'<p>جارٍ التحميل...</p>';const s=await db.collection('enrollments').where('st','==','pending').get();h+=s.docs.map(d=>{const e=d.data(),c=CO.find(x=>x.id===e.cid);return`<div class="card" style="margin-top:10px"><b>${esc(e.name)}</b> · ${esc(e.ph)}<br>${c?esc(c.t):''}<br>الرقم التأكيدي: <b dir="ltr">${esc(e.ref)}</b> · محوَّل من: ${esc(e.sp)} · آخر 4: ${esc(e.tx)}<p><button onclick="setE('${d.id}',1)">تفعيل</button> <button class="s" onclick="setE('${d.id}',0)">رفض</button></p></div>`}).join('')||'<p>لا توجد طلبات معلقة.</p>'}
+ app.innerHTML=h}
+async function addC(){const v=i=>$('#'+i).value.trim();if(!v('ct')||!(+v('cp')>0)){err='أدخل اسم الكورس وسعراً صحيحاً.';return admin()}
+ await db.collection('courses').add({t:v('ct'),g:v('cg'),pr:+v('cp'),e:v('ce')||'📖',o:Date.now()});await loadCO();admin()}
+async function delC(id){if(!confirm('حذف الكورس وكل دروسه؟'))return;const b=db.batch();for(const n of['lessons','media'])(await db.collection(`courses/${id}/${n}`).get()).forEach(d=>b.delete(d.ref));b.delete(db.doc('courses/'+id));await b.commit();await loadCO();admin()}
+async function addL(){const v=i=>$('#'+i).value.trim();if(!AC||!v('lt')||!embed(v('lu'))){err='أدخل عنوان الدرس ورابط يوتيوب أو درايف صحيحاً.';return admin()}
+ const id=db.collection('x').doc().id,b=db.batch();
+ b.set(db.doc(`courses/${AC}/lessons/${id}`),{t:v('lt'),o:Date.now()});
+ b.set(db.doc(`courses/${AC}/media/${id}`),{url:v('lu'),q:v('lq'),o:[v('lo1'),v('lo2'),v('lo3')].filter(Boolean),a:+$('#la').value-1});
+ await b.commit();await loadCO();admin()}
+async function delL(id){if(!confirm('حذف الدرس؟'))return;const b=db.batch();b.delete(db.doc(`courses/${AC}/lessons/${id}`));b.delete(db.doc(`courses/${AC}/media/${id}`));await b.commit();delete MM[id];await loadCO();admin()}
+async function setE(id,ok){if(ok)await db.doc('enrollments/'+id).update({st:'active'});else await db.doc('enrollments/'+id).delete();admin()}
 document.addEventListener('keydown',e=>{if(e.ctrlKey&&['s','p','u'].includes(e.key.toLowerCase())||e.key==='PrintScreen')e.preventDefault()});
 addEventListener('hashchange',()=>{err='';render()});render();
 </script>
