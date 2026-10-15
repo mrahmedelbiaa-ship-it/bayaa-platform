@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منصة أ/أحمد البياع التعليمية</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f4f8f6;--cd:#fff;--tx:#17302a;--mu:#5f7a72;--pr:#0f9d76;--p2:#e2f6ef;--ac:#f59f00;--ok:#2b9348;--okb:#e3f6e8;--er:#d00000;--erb:#fde8e8;--bd:#dbe8e3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0d1714;--cd:#15231f;--tx:#e6f2ee;--mu:#93aaa2;--pr:#3ddba9;--p2:#1b3029;--ok:#5fd37c;--okb:#173324;--er:#ff7b7b;--erb:#3a1d1d;--bd:#26403a}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;line-height:1.8}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--cd);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--cd);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:6px;padding:8px 14px;flex-wrap:wrap}
+.logo{font-weight:800;color:var(--pr);font-size:18px;margin-inline-end:auto;text-decoration:none}
+nav a{color:var(--tx);text-decoration:none;padding:6px 14px;border-radius:18px;font-size:15px}nav a.on{background:var(--p2);color:var(--pr);font-weight:700}
+main{max-width:1000px;margin:0 auto;padding:18px 14px 50px}
+.hero{background:linear-gradient(135deg,#0f9d76,#1971c2);color:#fff;border-radius:20px;padding:30px 22px;text-align:center}
+.hero h1{margin:0 0 8px;font-size:26px}.hero p{margin:0 auto 14px;max-width:560px;opacity:.95}
+h2{font-size:21px;margin:26px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:16px}
+.card.c{cursor:pointer}.card .e{font-size:30px}.card h3{margin:4px 0;font-size:16px}.card p{margin:0 0 8px;color:var(--mu);font-size:14px}
+.tag{display:inline-block;background:var(--p2);color:var(--pr);border-radius:12px;padding:1px 10px;font-size:12px}
+.price{font-weight:800;color:var(--ac);font-size:18px}
+button,.btn{font:inherit;cursor:pointer;background:var(--pr);color:#fff;border:0;border-radius:10px;padding:9px 20px;text-decoration:none;display:inline-block}
+.btn.s,button.s{background:var(--p2);color:var(--pr)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.chips button{background:var(--cd);color:var(--tx);border:1px solid var(--bd);border-radius:18px;padding:5px 14px}.chips button.on{background:var(--pr);color:#fff}
+label{display:block;font-size:14px;margin:8px 0 2px;color:var(--mu)}
+input,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:520px){.row{grid-template-columns:1fr}}
+.msg{padding:10px 14px;border-radius:10px;margin:10px 0;background:var(--p2)}.msg.er{background:var(--erb);color:var(--er)}.msg.ok{background:var(--okb);color:var(--ok)}
+.ls{display:flex;gap:12px;align-items:center;background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:11px 14px;margin-top:8px;cursor:pointer}
+.n{width:30px;height:30px;border-radius:50%;background:var(--p2);color:var(--pr);display:grid;place-items:center;font-weight:700;flex:none}.ls.d .n{background:var(--ok);color:#fff}
+.vid{position:relative;background:#0b1512;border-radius:14px;overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center;color:#9fb8af;user-select:none}
+.vid video{width:100%;height:100%}.wm{position:absolute;color:rgba(255,255,255,.35);font-size:14px;pointer-events:none;animation:mv 18s linear infinite}
+@keyframes mv{0%{top:8%;right:6%}25%{top:70%;right:60%}50%{top:20%;right:70%}75%{top:75%;right:10%}100%{top:8%;right:6%}}
+.o{display:block;width:100%;text-align:start;background:var(--bg);color:var(--tx);border:1px solid var(--bd);margin-top:8px}.o.ok{background:var(--okb);border-color:var(--ok)}.o.no{background:var(--erb);border-color:var(--er)}
+.bar{height:8px;background:var(--p2);border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--pr)}
+.soc{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0}.soc a{background:var(--p2);color:var(--pr);padding:4px 14px;border-radius:16px;text-decoration:none;font-size:14px}
+footer{background:var(--cd);border-top:1px solid var(--bd);padding:26px 14px;text-align:center;color:var(--mu);font-size:14px}
+footer a{color:var(--mu);margin:0 8px;text-decoration:none}footer h3{color:var(--tx);margin:0 0 4px}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#home">📚 أ/أحمد البياع</a>
+<nav id="nav"><a href="#home" data-p="home">الرئيسية</a><a href="#courses" data-p="courses">الكورسات</a><a href="#account" data-p="account">حسابي</a></nav></header>
+<main id="app"></main>
+<footer>
+<h3>أ/أحمد البياع</h3>
+<p>منصة تعليمية إلكترونية لطلاب المرحلة الإعدادية والثانوية في مصر، متخصصة في اللغة العربية.</p>
+<div class="soc"><a href="https://www.facebook.com/ahmedmohamedelbiaa" target="_blank" rel="noopener">فيسبوك</a><a href="https://www.instagram.com/ahmedmelbiaa/" target="_blank" rel="noopener">انستجرام</a><a href="https://www.youtube.com/@mrahmedelbiaa" target="_blank" rel="noopener">يوتيوب</a><a href="https://www.tiktok.com/@mr.ahmedelbiaa" target="_blank" rel="noopener">تيك توك</a><a href="https://wa.me/201025238488" target="_blank" rel="noopener">واتساب الدعم</a></div>
+<div><a href="https://hadeerghanem.com/about/">عن المنصة</a><a href="https://hadeerghanem.com/privacy/">سياسة الخصوصية</a><a href="https://hadeerghanem.com/terms/">شروط الاستخدام</a><a href="https://hadeerghanem.com/refund-policy/">سياسة الاسترجاع</a></div>
+<p>© 2026 جميع الحقوق محفوظة</p></footer>
+<script>
+const G=[['p1','الصف الأول الإعدادي','إعدادي'],['p2','الصف الثاني الإعدادي','إعدادي'],['p3','الصف الثالث الإعدادي','إعدادي'],['s1','الصف الأول الثانوي','ثانوي'],['s2','الصف الثاني الثانوي','ثانوي'],['s3','الصف الثالث الثانوي','ثانوي']];
+const L=(t,q,o,a)=>({t,v:'',q,o,a}); // v = رابط الفيديو (ملف mp4)
+const CO=[
+{id:'c1',g:'p1',t:'اللغة العربية - الصف الأول الإعدادي',e:'📖',pr:150,L:[L('أقسام الكلام','أي من الآتي فعل؟',['كتب','كتاب','مكتبة'],0),L('الجملة الاسمية','ما إعراب المبتدأ في الجملة الاسمية؟',['مرفوع','منصوب','مجرور'],0)]},
+{id:'c2',g:'p2',t:'اللغة العربية - الصف الثاني الإعدادي',e:'✍️',pr:150,L:[L('الفاعل ونائب الفاعل','الفاعل في الجملة الفعلية يكون:',['مرفوعاً','منصوباً','مجروراً'],0),L('المفعول به','المفعول به يكون:',['منصوباً','مرفوعاً','مجزوماً'],0)]},
+{id:'c3',g:'p3',t:'اللغة العربية - الصف الثالث الإعدادي',e:'📝',pr:150,L:[L('كان وأخواتها','خبر كان يكون:',['منصوباً','مرفوعاً','مجروراً'],0),L('إن وأخواتها','اسم إن يكون:',['منصوباً','مرفوعاً','مجزوماً'],0)]},
+{id:'c4',g:'s1',t:'اللغة العربية - الصف الأول الثانوي',e:'📚',pr:200,L:[L('البلاغة: التشبيه','أي مما يلي من أركان التشبيه؟',['المشبه به','المفعول المطلق','الحال'],0),L('الأدب الجاهلي','من أشهر شعراء المعلقات؟',['امرؤ القيس','المتنبي','أحمد شوقي'],0)]},
+{id:'c5',g:'s2',t:'اللغة العربية - الصف الثاني الثانوي',e:'🖋️',pr:200,L:[L('الاستعارة','في الاستعارة يُحذف:',['أحد طرفي التشبيه','الفاعل','المبتدأ'],0),L('الأدب الأموي','اشتهر جرير والفرزدق بفن:',['النقائض','المقامات','الموشحات'],0)]},
+{id:'c6',g:'s3',t:'اللغة العربية - الصف الثالث الثانوي',e:'🎓',pr:250,L:[L('الأدب الأندلسي','ما الفن الأدبي الذي ازدهر في الأندلس؟',['الموشحات','المعلقات','النقائض'],0),L('النقد الأدبي','من أعلام النقد والبلاغة القدماء:',['عبد القاهر الجرجاني','أحمد شوقي','نجيب محفوظ'],0)]}];
+const CODES=['DEMO-2026']; // أكواد التفعيل التجريبية - تُستبدل بقاعدة بيانات حقيقية
+const FT=[['🌍','التعلم من أي مكان','شاهد دروسك في أي وقت ومن أي جهاز.'],['📝','اختبارات إلكترونية','اختبر مستواك بعد كل درس بشكل فوري.'],['👨‍👩‍👦','متابعة ولي الأمر','يتابع ولي الأمر أداء ابنه أولًا بأول.'],['💡','شرح بسيط ومفهوم','نبسّط المفاهيم الصعبة بأسلوب واضح وسهل الفهم.'],['🎨','فيديوهات برسومات توضيحية','فيديوهات مشروحة برسومات توضيحية تسهّل الاستيعاب.'],['🎯','تمارين تفاعلية على الدروس','تمارين تفاعلية بعد كل درس لتثبيت المعلومة.'],['🔄','تحديث مستمر حسب المنهج','تحديث مستمر للمحتوى بما يواكب المنهج الدراسي.'],['👥','مجتمع طلابي ضخم','انضم لمجتمع كبير من الطلاب على نفس المسار.']];
+const PAY='01025238488';
+let D={users:[],me:''};try{D=JSON.parse(localStorage.getItem('hg')||'')||D}catch(e){}
+const sv=()=>{try{localStorage.setItem('hg',JSON.stringify(D))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=s=>document.querySelector(s),app=$('#app');
+const me=()=>D.users.find(u=>u.ph===D.me);
+const gn=id=>G.find(g=>g[0]===id)[1];
+const active=(u,c)=>u&&u.enr[c]&&u.enr[c].st==='active';
+let flt='all',err='',A={};
+function render(){
+ const[p,a,b]=location.hash.slice(1).split('/');const pg=p||'home';
+ document.querySelectorAll('nav a').forEach(x=>x.classList.toggle('on',x.dataset.p===(pg==='course'||pg==='lesson'?'courses':pg)));
+ ({home,courses,course:()=>course(a),lesson:()=>lesson(a,+b),account})[pg]?.();scrollTo(0,0);
+}
+function cc(c){return`<div class="card c" onclick="location.hash='course/${c.id}'"><div class="e">${c.e}</div><h3>${c.t}</h3><p><span class="tag">${gn(c.g)}</span> · ${c.L.length} دروس</p><span class="price">${c.pr} ج.م</span></div>`}
+function home(){
+ app.innerHTML=`<div class="hero"><h1>مرحباً بك في منصة أ/أحمد البياع</h1><p>اللغة العربية لطلاب الإعدادي والثانوي في مصر.</p><a class="btn" style="background:#fff;color:#0f9d76" href="#courses">تصفح الكورسات</a></div>
+ <h2>اختر مرحلتك الدراسية</h2>${['إعدادي','ثانوي'].map(s=>`<h3>المرحلة ال${s}ة</h3><div class="grid">${G.filter(g=>g[2]===s).map(g=>`<div class="card c" onclick="flt='${g[0]}';location.hash='courses'"><div class="e">${s==='إعدادي'?'📘':'📗'}</div><h3>${g[1]}</h3></div>`).join('')}</div>`).join('')}
+ <h2>مميزات المنصة</h2><p style="color:var(--mu);margin-top:-6px">كل ما تحتاجه لرحلة تعليمية متكاملة</p><div class="grid">${FT.map(f=>`<div class="card"><div class="e">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></div>`).join('')}</div>`;
+}
+function courses(){
+ app.innerHTML=`<h2>الكورسات</h2><div class="chips"><button class="${flt==='all'?'on':''}" onclick="flt='all';courses()">الكل</button>${G.map(g=>`<button class="${flt===g[0]?'on':''}" onclick="flt='${g[0]}';courses()">${g[1]}</button>`).join('')}</div><div class="grid">${CO.filter(c=>flt==='all'||c.g===flt).map(cc).join('')}</div>`;
+}
+function course(id){
+ const c=CO.find(x=>x.id===id);if(!c)return courses();const u=me(),en=u&&u.enr[id];
+ let box='';
+ if(!en||en.st==='none'||!active(u,id)){
+  if(!u)box=reg(c);
+  else if(!en)box=payBox(c);
+  else box=waitBox(c,en);
+ }
+ app.innerHTML=`<a href="#courses" style="color:var(--pr)">→ كل الكورسات</a><h2>${c.e} ${c.t}</h2><span class="tag">${gn(c.g)}</span> <span class="price">${c.pr} ج.م</span>
+ ${box}<div>${c.L.map((l,i)=>`<div class="ls ${u&&u.prog[id+':'+i]!=null?'d':''}" onclick="${active(u,id)?`location.hash='lesson/${id}/${i}'`:`alert('اشترك في الكورس أولاً لفتح الدروس')`}"><span class="n">${active(u,id)?(i+1):'🔒'}</span>${esc(l.t)}</div>`).join('')}</div>`;
+}
+function reg(c){return`<div class="card" style="margin:14px 0"><h3>إنشاء حساب والاشتراك في الكورس</h3><p>التسجيل يتم عند شراء الكورس.</p><div class="row"><div><label>الاسم الأول</label><input id="fn"></div><div><label>الاسم الثاني</label><input id="ln"></div><div><label>رقم الهاتف</label><input id="ph" inputmode="numeric" maxlength="11"></div><div><label>رقم هاتف ولي الأمر</label><input id="pp" inputmode="numeric" maxlength="11"></div></div><label>كلمة المرور</label><input id="pw" type="password"><label>المرحلة الدراسية</label><select id="gr">${G.map(g=>`<option value="${g[0]}" ${g[0]===c.g?'selected':''}>${g[1]}</option>`).join('')}</select>${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="doReg('${c.id}')">متابعة للدفع</button></p></div>`}
+function doReg(cid){
+ const v=i=>$('#'+i).value.trim(),ph=/^01\d{9}$/;err='';
+ if(!v('fn')||!v('ln'))err='أدخل الاسم الأول والثاني.';else if(!ph.test(v('ph'))||!ph.test(v('pp')))err='أدخل رقمي هاتف صحيحين (11 رقماً يبدأ بـ 01).';else if(v('pw').length<6)err='كلمة المرور 6 أحرف على الأقل.';else if(D.users.some(u=>u.ph===v('ph')))err='هذا الرقم مسجل بالفعل، سجّل الدخول من صفحة حسابي.';
+ if(err)return course(cid);
+ D.users.push({fn:v('fn'),ln:v('ln'),ph:v('ph'),pp:v('pp'),pw:v('pw'),g:v('gr'),enr:{},prog:{}});D.me=v('ph');sv();course(cid);
+}
+function payBox(c){return`<div class="card" style="margin:14px 0"><h3>الدفع عبر فودافون كاش</h3><ol><li>حوّل مبلغ <b>${c.pr} ج.م</b> على الرقم <b dir="ltr">${PAY}</b> عبر فودافون كاش.</li><li>أدخل رقم الهاتف الذي حوّلت منه وآخر 4 أرقام من رقم العملية.</li><li>سيظهر لك رقم تأكيدي، أرسله لنا على واتساب لتفعيل الكورس.</li></ol><label>رقم الهاتف المحوَّل منه</label><input id="sp" inputmode="numeric" maxlength="11"><label>آخر 4 أرقام من رقم العملية</label><input id="tx" inputmode="numeric" maxlength="4">${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="doPay('${c.id}')">تأكيد الدفع</button></p></div>`}
+function doPay(cid){const u=me(),sp=$('#sp').value.trim(),tx=$('#tx').value.trim();err='';
+ if(!/^01\d{9}$/.test(sp)||!/^\d{4}$/.test(tx)){err='تأكد من رقم الهاتف وآخر 4 أرقام.';return course(cid)}
+ u.enr[cid]={st:'pending',ref:'HG-'+Math.floor(100000+Math.random()*900000),sp,tx};sv();course(cid);}
+function waitBox(c,en){const m=encodeURIComponent(`مرحباً، قمت بدفع ${c.pr} ج.م لكورس (${c.t}). الرقم التأكيدي: ${en.ref} - هاتفي: ${D.me}`);
+ return`<div class="card" style="margin:14px 0"><div class="msg ok">تم استلام طلبك ✅ رقمك التأكيدي: <b dir="ltr">${en.ref}</b></div><p>أرسل هذا الرقم لخدمة العملاء ليتم تفعيل الكورس، وستحصل على كود التفعيل.</p><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${PAY}?text=${m}">إرسال على واتساب</a><label>كود التفعيل</label><input id="ac" dir="ltr">${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="doAct('${c.id}')">تفعيل الكورس</button></p></div>`}
+function doAct(cid){const u=me();err='';if(CODES.includes($('#ac').value.trim().toUpperCase())){u.enr[cid].st='active';sv()}else err='كود التفعيل غير صحيح.';course(cid)}
+function lesson(cid,i){
+ const c=CO.find(x=>x.id===cid),u=me();if(!c||!active(u,cid)){location.hash='course/'+cid;return}
+ const l=c.L[i],k=cid+':'+i,s=A[k];
+ app.innerHTML=`<a href="#course/${cid}" style="color:var(--pr)">→ ${c.t}</a><h2>${i+1}. ${esc(l.t)}</h2>
+ <div class="vid" oncontextmenu="return false">${l.v?`<video src="${esc(l.v)}" controls controlsList="nodownload noplaybackrate" disablePictureInPicture></video>`:'🎬 سيظهر هنا فيديو الدرس'}<span class="wm">${esc(u.fn+' '+u.ln)} - ${u.ph}</span></div>
+ <div class="card" style="margin-top:14px"><h3>اختبر نفسك</h3><p>${esc(l.q)}</p>${l.o.map((o,j)=>`<button class="o ${s!=null?(j===l.a?'ok':j===s?'no':''):''}" onclick="ans('${cid}',${i},${j})">${esc(o)}</button>`).join('')}${s!=null?`<div class="msg ${s===l.a?'ok':'er'}">${s===l.a?'إجابة صحيحة 🎉':'إجابة خاطئة، الصحيحة: '+esc(l.o[l.a])}</div>`:''}</div>
+ <p>${i?`<a class="btn s" href="#lesson/${cid}/${i-1}">السابق</a> `:''}${i<c.L.length-1?`<a class="btn" href="#lesson/${cid}/${i+1}">التالي</a>`:''}</p>`;
+}
+function ans(cid,i,j){const k=cid+':'+i;if(A[k]!=null)return;A[k]=j;me().prog[k]=j===CO.find(x=>x.id===cid).L[i].a?1:0;sv();lesson(cid,i)}
+function account(){
+ const u=me();
+ if(!u||!Object.keys(u.enr).length){
+  app.innerHTML=`<h2>تسجيل الدخول</h2><div class="card"><label>رقم الهاتف</label><input id="lp" inputmode="numeric"><label>كلمة المرور</label><input id="lw" type="password">${err?`<div class="msg er">${err}</div>`:''}<p><button onclick="login()">دخول</button></p><p style="color:var(--mu);font-size:14px">لا يمكن إنشاء حساب إلا عند شراء كورس. اذهب إلى <a href="#courses" style="color:var(--pr)">الكورسات</a> واختر كورسك.</p></div>`;return}
+ const rows=Object.keys(u.enr).map(id=>{const c=CO.find(x=>x.id===id),en=u.enr[id],n=c.L.filter((_,i)=>u.prog[id+':'+i]!=null).length,ok=c.L.filter((_,i)=>u.prog[id+':'+i]===1).length,p=Math.round(n/c.L.length*100);
+  return`<div class="card" style="margin-top:10px"><b>${c.e} ${c.t}</b> <span class="tag">${en.st==='active'?'مفعّل':'قيد المراجعة'}</span><div class="bar"><i style="width:${p}%"></i></div><small>تقدم ${p}% · إجابات صحيحة ${ok}/${c.L.length}</small> <a href="#course/${id}" style="color:var(--pr)">فتح</a></div>`}).join('');
+ const rep=encodeURIComponent(`تقرير متابعة الطالب ${u.fn} ${u.ln} من منصة أ/أحمد البياع:\n`+Object.keys(u.enr).map(id=>{const c=CO.find(x=>x.id===id);return `- ${c.t}: أنجز ${c.L.filter((_,i)=>u.prog[id+':'+i]!=null).length}/${c.L.length} دروس، صحيح ${c.L.filter((_,i)=>u.prog[id+':'+i]===1).length}`}).join('\n'));
+ app.innerHTML=`<h2>أهلاً ${esc(u.fn)} 👋</h2><div class="card"><p>${esc(u.fn+' '+u.ln)} · ${gn(u.g)}<br>هاتفك: ${esc(u.ph)} · ولي الأمر: ${esc(u.pp)}</p><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/2${esc(u.pp)}?text=${rep}">إرسال تقرير لولي الأمر</a> <button class="s" onclick="D.me='';sv();account()">تسجيل خروج</button></div><h2>كورساتي</h2>${rows}`;
+}
+function login(){const u=D.users.find(x=>x.ph===$('#lp').value.trim()&&x.pw===$('#lw').value);if(u&&Object.keys(u.enr).length){D.me=u.ph;sv();err=''}else err='بيانات الدخول غير صحيحة أو لا يوجد اشتراك.';account()}
+document.addEventListener('keydown',e=>{if(e.ctrlKey&&['s','p','u'].includes(e.key.toLowerCase())||e.key==='PrintScreen')e.preventDefault()});
+addEventListener('hashchange',()=>{err='';render()});render();
+</script>
+</body>
+</html>
