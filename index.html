@@ -76,7 +76,7 @@ header{animation:fi .5s ease}
 </head>
 <body>
 <header><a class="logo" href="#home">📚 أ/أحمد البياع</a>
-<nav id="nav"><a href="#home" data-p="home">الرئيسية</a><a href="#courses" data-p="courses">الكورسات</a><a href="#account" data-p="account">حسابي</a></nav></header>
+<nav id="nav"><a href="#home" data-p="home">الرئيسية</a><a href="#courses" data-p="courses">الكورسات</a><a href="#account" data-p="account">حسابي</a></nav><button id="ins" class="s" style="display:none;padding:6px 14px">⬇ تثبيت التطبيق</button></header>
 <main id="app"><h1>أ/أحمد البياع - معلم اللغة العربية للمرحلة الإعدادية والثانوية</h1><p>منصة أ/أحمد البياع لتعليم اللغة العربية للمرحلة الإعدادية والثانوية في مصر: شرح مبسط للنحو والبلاغة والأدب والنصوص، فيديوهات واختبارات إلكترونية ومتابعة ولي الأمر.</p></main>
 <noscript><p>يلزم تفعيل جافاسكربت لتصفح المنصة.</p></noscript>
 <footer>
@@ -198,6 +198,11 @@ async function rstD(id){if(!confirm('تصفير الأجهزة المسجلة ل
 async function setE(id,ok){if(ok)await db.doc('enrollments/'+id).update({st:'active'});else await db.doc('enrollments/'+id).delete();admin()}
 document.addEventListener('keydown',e=>{if(e.ctrlKey&&['s','p','u'].includes(e.key.toLowerCase())||e.key==='PrintScreen')e.preventDefault()});
 addEventListener('hashchange',()=>{err='';_an();render()});_an();render();
+(()=>{const b=$('#ins'),ios=/iphone|ipad|ipod/i.test(navigator.userAgent),sa=matchMedia('(display-mode: standalone)').matches||navigator.standalone;let DI=null;
+ if(!sa)b.style.display='';
+ addEventListener('beforeinstallprompt',e=>{e.preventDefault();DI=e});
+ addEventListener('appinstalled',()=>{b.style.display='none'});
+ b.onclick=async()=>{if(DI){DI.prompt();await DI.userChoice;DI=null}else alert(ios?'لتثبيت التطبيق على الآيفون: افتح الموقع في Safari، اضغط زر المشاركة، ثم اختر (إضافة إلى الشاشة الرئيسية).':'لتثبيت التطبيق: افتح قائمة المتصفح (⋮) ثم اختر (تثبيت التطبيق) أو (إضافة إلى الشاشة الرئيسية).')}})();
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
 </body>
