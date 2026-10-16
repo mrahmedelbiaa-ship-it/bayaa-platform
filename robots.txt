@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrahmedelbiaa-ship-it.github.io/bayaa-platform/sitemap.xml
