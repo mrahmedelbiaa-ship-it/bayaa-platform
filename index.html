@@ -8,6 +8,8 @@
 <meta name="keywords" content="أحمد البياع, معلم لغة عربية, منصة تعليمية, لغة عربية اعدادي, لغة عربية ثانوي, شرح نحو, شرح بلاغة, دروس اونلاين, مصر">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0f9d76">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png"><link rel="icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="أحمد البياع">
 <link rel="canonical" href="https://mrahmedelbiaa-ship-it.github.io/bayaa-platform/">
 <meta property="og:type" content="website"><meta property="og:locale" content="ar_EG"><meta property="og:site_name" content="منصة أ/أحمد البياع">
 <meta property="og:title" content="أ/أحمد البياع | معلم اللغة العربية - إعدادي وثانوي"><meta property="og:description" content="منصة أ/أحمد البياع لتعليم اللغة العربية للمرحلة الإعدادية والثانوية في مصر: شرح مبسط للنحو والبلاغة والأدب والنصوص، فيديوهات واختبارات إلكترونية ومتابعة ولي الأمر."><meta property="og:url" content="https://mrahmedelbiaa-ship-it.github.io/bayaa-platform/">
@@ -196,6 +198,7 @@ async function rstD(id){if(!confirm('تصفير الأجهزة المسجلة ل
 async function setE(id,ok){if(ok)await db.doc('enrollments/'+id).update({st:'active'});else await db.doc('enrollments/'+id).delete();admin()}
 document.addEventListener('keydown',e=>{if(e.ctrlKey&&['s','p','u'].includes(e.key.toLowerCase())||e.key==='PrintScreen')e.preventDefault()});
 addEventListener('hashchange',()=>{err='';_an();render()});_an();render();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
 </body>
 </html>
