@@ -82,6 +82,18 @@ header{animation:fi .5s ease}
 @media (max-width:640px){.bn-t{position:static;width:auto;padding:16px 18px 20px;background:linear-gradient(#1a65a6,#124a80)}.bn-h{font-size:24px}.bn-p{font-size:15px}.bn-b{font-size:15px;padding:10px 26px}}
 .stg{border-radius:16px;overflow:hidden;background-size:cover;background-position:center;min-height:130px;display:flex;align-items:flex-end;box-shadow:var(--sh);margin:14px 0 10px;background-color:var(--p2)}
 .stg h3{margin:0;width:100%;padding:38px 16px 12px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.65));font-size:20px}
+#cbf{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;width:56px;height:56px;border-radius:50%;font-size:26px;padding:0;box-shadow:var(--shh)}
+#cb{position:fixed;left:16px;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:20;width:min(360px,calc(100vw - 32px));height:min(540px,calc(100vh - 150px));background:var(--cd);border:1px solid var(--bd);border-radius:18px;box-shadow:var(--shh);display:flex;flex-direction:column;overflow:hidden}
+#cb[hidden]{display:none}
+.cb-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--pr);color:#fff}
+.cb-h button{background:none;padding:0 6px;color:#fff;font-size:18px;box-shadow:none}
+#cbm{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.cm{max-width:88%;padding:8px 12px;border-radius:14px;font-size:14.5px;line-height:1.7;word-break:break-word}
+.cm.b{background:var(--p2);align-self:flex-start}.cm.u{background:var(--pr);color:#fff;align-self:flex-end}
+.cm a{color:var(--pr)}.cm.u a{color:#fff}.cm p{margin:6px 0 0}
+#cbc{display:flex;gap:6px;flex-wrap:wrap;padding:6px 10px;max-height:86px;overflow-y:auto}
+#cbc button{background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:14px;padding:3px 10px;font-size:13px}
+.cb-i{display:flex;gap:6px;padding:8px;border-top:1px solid var(--bd)}.cb-i input{flex:1}
 </style>
 </head>
 <body>
@@ -220,6 +232,55 @@ addEventListener('hashchange',()=>{err='';_an();render()});_an();render();
  addEventListener('beforeinstallprompt',e=>{e.preventDefault();DI=e});
  addEventListener('appinstalled',()=>{b.style.display='none'});
  b.onclick=async()=>{if(DI){DI.prompt();await DI.userChoice;DI=null}else alert(ios?'لتثبيت التطبيق على الآيفون: افتح الموقع في Safari، اضغط زر المشاركة، ثم اختر (إضافة إلى الشاشة الرئيسية).':'لتثبيت التطبيق: افتح قائمة المتصفح (⋮) ثم اختر (تثبيت التطبيق) أو (إضافة إلى الشاشة الرئيسية).')}})();
+const AI_URL=''; // بعد إنشاء Cloudflare Worker ضع رابطه هنا بين علامتي الاقتباس لتفعيل الذكاء الاصطناعي
+(()=>{
+const nz=s=>s.toLowerCase().replace(/[\u064B-\u0652\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه');
+const wa=`<p><a class="btn s" target="_blank" rel="noopener" href="${WA}">تواصل مع الدعم على واتساب</a></p>`;
+const F=[
+[['اشتراك','اشترك','اشتري','شراء','حساب جديد','انشاء حساب','اسجل'],'للاشتراك: افتح <a href="#courses">صفحة الكورسات</a> واختر الكورس، ثم سجّل بياناتك (الاسم ورقم هاتفك ورقم ولي الأمر وكلمة المرور والمرحلة)، ثم حوّل المبلغ بفودافون كاش وأكّد الدفع لتحصل على رقم تأكيدي.'],
+[['دفع','فودافون','تحويل','كاش','ادفع'],`الدفع عبر فودافون كاش على الرقم <b dir="ltr">${PAY}</b>. بعد التحويل أدخل في صفحة الكورس رقم هاتفك الذي حوّلت منه وآخر 4 أرقام من رقم العملية، فيظهر لك رقم تأكيدي.`],
+[['تفعيل','يفعل','فعل','تاكيدي','لسه','لم يفتح','مفتحش'],'يُفعَّل الكورس بعد مراجعة التحويل. أرسل الرقم التأكيدي لخدمة العملاء على واتساب لتسريع التفعيل، وبعدها تظهر الدروس في حسابك.'+wa],
+[['دخول','ادخل','تسجيل الدخول','مش عارف ادخل'],'ادخل من صفحة <a href="#account">حسابي</a> برقم هاتفك (الرقم فقط) وكلمة المرور التي اخترتها عند الاشتراك. إن لم يكن لديك حساب فسجّل عند الاشتراك في أي كورس.'],
+[['كلمه المرور','كلمة السر','نسيت','باسورد','الباسورد'],'لا توجد استعادة تلقائية لكلمة المرور حاليًا. تواصل مع الدعم وسيساعدونك.'+wa],
+[['جهاز','اجهزه','جهازين','جهاز جديد'],'الحساب يعمل على جهازين فقط. للدخول من جهاز جديد تواصل مع الدعم ليتم تصفير الأجهزة.'+wa],
+[['تثبيت','تطبيق','تنزيل','انزل'],'اضغط زر ⬇ تثبيت التطبيق في أعلى الموقع، أو من قائمة المتصفح اختر (تثبيت التطبيق). وعلى الآيفون من Safari: مشاركة ثم إضافة إلى الشاشة الرئيسية.'],
+[['فيديو','لا يعمل','مش شغال','مش بيشتغل','بيهنج','لا يظهر'],'جرّب تحديث الصفحة (Ctrl + F5) أو استخدم متصفحًا آخر، وتأكد من اتصال الإنترنت. إن استمرت المشكلة أرسل لقطة شاشة للدعم.'+wa],
+[['اختبار','امتحان','اسئله','سؤال مقالي'],'بعد كل درس اختبار: أسئلة الاختيار تُصحَّح فورًا، وفي الأسئلة المقالية تكتب إجابتك ثم تعرض الإجابة النموذجية لتقارنها.'],
+[['ولي الامر','تقرير','متابعه'],'من صفحة <a href="#account">حسابي</a> اضغط (إرسال تقرير لولي الأمر) ليصل إلى واتساب ولي الأمر تقرير بتقدمك ونتائجك.'],
+[['استرجاع','استرداد','فلوسي','ارجاع'],'تجد التفاصيل في <a href="#page/refund">سياسة الاسترجاع</a>.'],
+[['اوائل','الاوائل','متفوق'],'تجد أوائل الطلبة في <a href="#toppers">قسم أوائل الطلبة</a>.'],
+[['سعر','كام','ثمن','تكلفه','بكام'],'سعر كل كورس مكتوب على بطاقته في <a href="#courses">صفحة الكورسات</a>.'],
+[['كورسات','المراحل','صف','اعدادي','ثانوي','مرحله'],'الكورسات متاحة من الصف الأول الإعدادي حتى الثالث الثانوي، تصفحها من <a href="#courses">صفحة الكورسات</a>.'],
+[['تواصل','واتساب','رقم الدعم','دعم','مدرس','الاستاذ'],'يسعدنا تواصلك معنا:'+wa],
+[['مرحبا','السلام','اهلا','صباح','مساء'],'أهلًا بك! اسألني عن الاشتراك أو الدفع أو الدخول أو أي شيء في المنصة.'],
+[['شكرا','تسلم','جزاك'],'العفو! بالتوفيق دائمًا 🌟']
+].map(([k,a])=>[k.map(nz),a]);
+const chips=['كيف أشترك؟','طريقة الدفع','متى يُفعَّل الكورس؟','لا أستطيع الدخول','تثبيت التطبيق','الأجهزة المسموحة'];
+const root=document.createElement('div');
+root.innerHTML=`<button id="cbf" aria-label="المساعد">💬</button><div id="cb" hidden><div class="cb-h"><b>🤖 المساعد الذكي</b><button id="cbx" aria-label="إغلاق">✕</button></div><div id="cbm"></div><div id="cbc"></div><div class="cb-i"><input id="cbq" placeholder="اكتب سؤالك..." maxlength="400"><button id="cbs">إرسال</button></div></div>`;
+document.body.appendChild(root);
+const P_=document.getElementById('cb'),M=document.getElementById('cbm'),Q=document.getElementById('cbq'),H=[];
+const add=(r,h)=>{const d=document.createElement('div');d.className='cm '+r;d.innerHTML=h;M.appendChild(d);M.scrollTop=M.scrollHeight;return d};
+const fmt=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/^\* /gm,'• ').replace(/\n/g,'<br>');
+document.getElementById('cbc').innerHTML=chips.map(c=>`<button>${c}</button>`).join('');
+document.getElementById('cbc').onclick=e=>{if(e.target.tagName==='BUTTON')ask(e.target.textContent)};
+let first=1;
+document.getElementById('cbf').onclick=()=>{P_.hidden=!P_.hidden;if(!P_.hidden){if(first){first=0;add('b','أهلًا بك! أنا مساعد منصة أ/أحمد البياع. اختر سؤالًا من الأسفل أو اكتب سؤالك.')}Q.focus()}};
+document.getElementById('cbx').onclick=()=>{P_.hidden=true};
+M.addEventListener('click',e=>{if(e.target.closest('a[href^="#"]'))P_.hidden=true});
+document.getElementById('cbs').onclick=()=>{const v=Q.value;Q.value='';ask(v)};
+Q.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=Q.value;Q.value='';ask(v)}});
+async function ask(q){q=q.trim().slice(0,400);if(!q)return;add('u',esc(q));const n=nz(q);let best=null,bs=0;
+ for(const[k,a]of F){const s=k.filter(x=>n.includes(x)).length;if(s>bs){bs=s;best=a}}
+ if(best){add('b',best);return}
+ if(!AI_URL){add('b','لم أجد إجابة دقيقة عن سؤالك. اختر من الأسئلة الشائعة بالأسفل أو تواصل مع الدعم.'+wa);return}
+ if(!U){add('b','للأسئلة الدراسية سجّل الدخول أولًا من صفحة <a href="#account">حسابي</a>.');return}
+ const t=add('b','جارٍ الكتابة...');
+ try{const tok=await U.getIdToken();const r=await fetch(AI_URL,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+tok},body:JSON.stringify({q,h:H.slice(-6)})});const d=await r.json();const a=String(d.a||'');t.innerHTML=fmt(a);H.push({r:'u',t:q},{r:'b',t:a})}
+ catch(e){t.innerHTML='تعذر الاتصال بالمساعد الآن.'+wa}
+ M.scrollTop=M.scrollHeight}
+})();
+
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
 </body>
